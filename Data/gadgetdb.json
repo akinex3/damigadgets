@@ -1,0 +1,40 @@
+{
+  "blogs": [
+    {
+      "id": 2,
+      "title": "MacBook Pro",
+      "body": "Apple in October 2021 overhauled the high-emd MackBook Pro, introducing a new design, new chips, new compabilities, and more",
+      "coo": "America"
+    },
+    {
+      "id": 3,
+      "title": "Microsoft Surface",
+      "body": "For some of the best windows hardwareon the market, look no further than Microsoft's Surface brand, best known for innova",
+      "coo": "America"
+    },
+    {
+      "id": 4,
+      "title": "Edikaikong",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit quisquam facilis repudiandae!",
+      "coo": "Akwa Ibom"
+    },
+    {
+      "id": 5,
+      "title": "Efo",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt id a sequi!",
+      "coo": "Ijebu"
+    },
+    {
+      "id": 7,
+      "title": "Cashew",
+      "body": "You can find Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, sed harum!",
+      "coo": "Enugu"
+    },
+    {
+      "title": "Hoover",
+      "coo": "UK",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id": 9
+    }
+  ]
+}

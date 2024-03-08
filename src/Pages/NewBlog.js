@@ -6,7 +6,11 @@ const NewBlog = () => {
     const [body, setBody] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Corrected variable name
 
-    let URL = "http://localhost:8000/blogs";
+    // let URL = "http://localhost:8000/blogs";
+
+    let URL = "https://my-json-server.typicode.com/akinex3/damilola";
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -4,15 +4,11 @@ const NewBlog = () => {
     const [title, setTitle] = useState('');
     const [coo, setCoo] = useState('');
     const [body, setBody] = useState('');
-    const [isLoading, setIsLoading] = useState(false); // Corrected variable name
+    const [isLoading, setIsLoading] = useState(false);
 
-    // let URL = "http://localhost:8000/blogs";
+    const URL = "https://my-json-server.typicode.com/akinex3/damilola/blogs";
 
-    let URL = "https://my-json-server.typicode.com/akinex3/damilola";
-
-
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const blog = { title, coo, body };
@@ -20,24 +16,32 @@ const NewBlog = () => {
 
         setIsLoading(true);
 
-        fetch(`${URL}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(blog),
-        }).then(() => {
+        try {
+            const response = await fetch(URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(blog),
+            });
+
+            if (response.ok) {
+                console.log('Blog added successfully');
+                // Additional logic if needed
+            } else {
+                console.error('Failed to add blog');
+            }
+        } catch (error) {
+            console.error('Error adding blog:', error);
+        } finally {
             setIsLoading(false);
-        });
+        }
     };
 
     return (
         <div className='container'>
             <h1 className='text-container'>Add Blogs</h1>
             <form onSubmit={handleSubmit}>
-
-export default NewBlog;
-
                 <div className="mb-3">
                     <label className="form-label">Title</label>
                     <input
@@ -45,7 +49,7 @@ export default NewBlog;
                         className="form-control"
                         placeholder="Title"
                         value={title}
-                        onChange={(e) => setTitle(e.target.value)} // Corrected attribute name
+                        onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
@@ -55,7 +59,7 @@ export default NewBlog;
                         className="form-control"
                         placeholder="Country of origin"
                         value={coo}
-                        onChange={(e) => setCoo(e.target.value)} // Corrected variable name
+                        onChange={(e) => setCoo(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
@@ -64,17 +68,13 @@ export default NewBlog;
                         className="form-control"
                         rows="4"
                         value={body}
-                        onChange={(e) => setBody(e.target.value)} // Corrected attribute name
+                        onChange={(e) => setBody(e.target.value)}
                     ></textarea>
                 </div>
                 <div className="d-grid gap-2">
-                    {
-                        !isLoading && <button className='btn btn-primary'>Submit</button>
-                    }
-                    {
-                        isLoading && <button disabled className='btn btn-primary'>Adding Blog...</button>
-                    }
-                  
+                    <button type="submit" className='btn btn-primary' disabled={isLoading}>
+                        {isLoading ? 'Adding Blog...' : 'Submit'}
+                    </button>
                 </div>
             </form>
         </div>
@@ -82,4 +82,5 @@ export default NewBlog;
 }
 
 export default NewBlog;
+
 
